@@ -6,6 +6,9 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from PIL import Image
 
+# --- Streamlit UI ---
+st.set_page_config(page_title="Animal Classifier", layout="centered")
+
 # --- Constants ---
 IMAGE_SIZE = (224, 224)
 MODEL_PATH = "best_model.keras"
@@ -24,8 +27,6 @@ def download_model():
 download_model()
 model = load_model(MODEL_PATH, compile=False)
 
-# --- Streamlit UI ---
-st.set_page_config(page_title="Animal Classifier", layout="centered")
 st.title("🧠 Animal Image Classifier")
 st.markdown("Upload an animal image and let the model identify the species!")
 
